@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
     <title>
         
-        Hello World · zoeWong&#39;s Studio
+        element-ui,InputNumber传值遇到的问题 · zoeWong&#39;s Studio
         
     </title>
     <link rel="icon" href= /assets/favicon.ico>
@@ -72,7 +72,7 @@
                 <a href="/" >zoeWong&#39;s Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Hello World</a>
+                <a href="#" class="post-name">element-ui,InputNumber传值遇到的问题</a>
             </div>
     </div>
     
@@ -93,7 +93,7 @@
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Hello World
+            element-ui,InputNumber传值遇到的问题
             <!-- 404 -->
             
         </h1>
@@ -109,10 +109,18 @@
         
             <!-- 文章页标签  -->
             
+                <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = element-ui>element-ui</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = vue>vue</a>
+    
+</div>
+            
             <script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdMiniList": false, "bdPic": "", "bdStyle": "1", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = "/static/api/js/share.js"];</script>
             <div class="post-intro-meta">
                 <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                <span class="post-intro-time">2018/01/09</span>
+                <span class="post-intro-time">2018/05/03</span>
                 <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                     <span class="iconfont-archer">&#xe604;</span>
                     <span id="busuanzi_value_page_pv"></span>
@@ -195,27 +203,23 @@
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>在用element-ui和antv G6 画canvas自定义图形的时候，遇到一个问题。<br>在 InputNumber 中需要传index值，InputNumber 官方是只能传当前值。<br>我试着传index值的时候，然后用form数据来传当前值，但是发现当前值永远是上一个值。无法获取准确的当前值。</p>
+<h2 id="element-ui-组件-InputNumber"><a href="#element-ui-组件-InputNumber" class="headerlink" title="element-ui 组件 InputNumber"></a>element-ui 组件 InputNumber</h2><h3 id="官方是用-change-来跟踪计数器的值"><a href="#官方是用-change-来跟踪计数器的值" class="headerlink" title="官方是用 @change 来跟踪计数器的值"></a>官方是用 @change 来跟踪计数器的值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-input-number v-model=<span class="string">"XXX"</span> @change=<span class="string">"handleChange"</span> &gt;&lt;/el-input-number&gt;</span><br><span class="line"></span><br><span class="line">handleChange(value) &#123;</span><br><span class="line">  console.log(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="我原来写的"><a href="#我原来写的" class="headerlink" title="我原来写的"></a>我原来写的</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-row  v-for=<span class="string">"(value, index) in dataForm.models"</span>&gt;</span><br><span class="line">   &lt;el-input-number v-model=<span class="string">"value.width"</span> @change=<span class="string">"handleChange(index)"</span> &gt;&lt;/el-input-number&gt;</span><br><span class="line">&lt;/el-row&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">handleChange(i) &#123;</span><br><span class="line">  console.log(i); //获取到index</span><br><span class="line">  console.log(this.dataForm.models[i].width) //无法实时获取到当前值</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="解决方法-在change事件中加入-nextTick"><a href="#解决方法-在change事件中加入-nextTick" class="headerlink" title="解决方法: 在change事件中加入$nextTick"></a>解决方法: 在change事件中加入$nextTick</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">handleChange(i) &#123;</span><br><span class="line">	this.<span class="variable">$nextTick</span>(() =&gt; &#123;</span><br><span class="line">		console.log(i); //获取到index</span><br><span class="line">		console.log(this.dataForm.models[i].width) //可以实时获取到当前值</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>More Info <a href="https://cn.vuejs.org/v2/guide/reactivity.html#%E5%BC%82%E6%AD%A5%E6%9B%B4%E6%96%B0%E9%98%9F%E5%88%97" target="_blank" rel="noopener">深入响应式原理–异步更新队列</a></p>
 
     </article>
     <!-- 前后页  -->
     <ul class="post-pager">
         
-            <li class="next">
-                <a href= "/2018/05/03/change时获取非value值/" title= element-ui,InputNumber传值遇到的问题 >
-                    <span>Next Post</span>
-                    <span>element-ui,InputNumber传值遇到的问题</span>
+        
+            <li class="previous">
+                <a href= "/2018/01/09/hello-world/" title= Hello World >
+                    <span>Previous Post</span>
+                    <span>Hello World</span>
                 </a>
             </li>
-        
         
     </ul>
     <!-- 评论插件 -->
@@ -275,7 +279,7 @@
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#element-ui-组件-InputNumber"><span class="toc-number">1.</span> <span class="toc-text">element-ui 组件 InputNumber</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#官方是用-change-来跟踪计数器的值"><span class="toc-number">1.1.</span> <span class="toc-text">官方是用 @change 来跟踪计数器的值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#我原来写的"><span class="toc-number">1.2.</span> <span class="toc-text">我原来写的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方法-在change事件中加入-nextTick"><span class="toc-number">1.3.</span> <span class="toc-text">解决方法: 在change事件中加入$nextTick</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top">&#xe639;</div>
