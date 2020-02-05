@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+    <title>
+        
+        个人简历 · zoeWang&#39;s Studio
+        
+    </title>
+    <link rel="icon" href= /assets/favicon.ico>
+    <!-- TODO: 在font-face加载完毕后改变字体  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"></script>
+    <!-- 提前加载place holder  -->
+    <style type="text/css">
+        @font-face {
+            font-family: 'Oswald-Regular';
+            src: url(/public/font/Oswald-Regular.ttf);
+        }
+    </style>
+    <style type="text/css">
+        .site-intro {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            overflow: hidden;
+            box-shadow: -0.1rem 0 0.5rem 0 rgba(0, 0, 0, 0.5);
+        }
+        .site-intro-placeholder {
+            position: absolute;
+            z-index: -2;
+            top: 0;
+            left: 0px;
+            width: calc(100% + 300px);
+            height: 100%;
+            background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+            background-position: center center;
+            transform: translate3d(-226px, 0, 0);
+            animation: gradient-move 2.5s ease-out 0s 1;
+        }
+        @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+    <link rel="stylesheet" href = /public/css/style.css?v=20171227 />
+    <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js" defer></script>
+    
+    <script src="/scripts/main.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="about-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <a class="home-link" href=/>zoeWang's Studio.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro">
+    
+    <!-- 主页  -->
+    
+    
+            
+    <div class="site-intro-img" style="background-image: url(/intro/about-page.jpg)"></div>
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            个人简历
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+    </div>
+</div>
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <script>
+            var browser = {
+                    versions: function () {
+                        var u = window.navigator.userAgent;
+                        return {
+                            userAgent: u,
+                            trident: u.indexOf('Trident') > -1, //IE内核
+                            presto: u.indexOf('Presto') > -1, //opera内核
+                            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                            iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+                            iPad: u.indexOf('iPad') > -1, //是否为iPad
+                            webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+                            weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+                            uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+                        };
+                    }()
+                }
+
+            function fontLoaded(){
+                console.log('font loaded');
+                if (document.getElementsByClassName('site-intro-meta')) {
+                    document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+                    document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+                    var postIntroTags = document.getElementsByClassName('post-intro-tags')[0],
+                        postIntroMeat = document.getElementsByClassName('post-intro-meta')[0];
+                        if (postIntroTags) {
+                            postIntroTags.classList.add('post-fade-in');
+                        }
+                        if (postIntroMeat) {
+                            postIntroMeat.classList.add('post-fade-in');
+                        }
+                    }
+                }
+                
+            console.log("userAgent:" + browser.versions.userAgent);
+            // UC不支持跨域，所以直接显示
+            if (browser.versions.uc) {
+                console.log("UCBrowser");
+                fontLoaded();
+            } else {
+                WebFont.load({
+                    custom: {
+                        families: ['Oswald-Regular']
+                    },
+                    loading: function () {  //所有字体开始加载
+                        // console.log('loading');
+                    },
+                    active: function () {  //所有字体已渲染
+                        fontLoaded();
+                    },
+                    inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+                        console.log('inactive: timeout');
+                        fontLoaded();
+                    },
+                    timeout: 7000 // Set the timeout to two seconds
+                });
+            }
+        </script>
+        <div class="container container-unloaded">
+            <!-- 不可以删除，否则会调用post的layout  -->
+<main class="main about-page">
+    <article class="article-entry">
+        <p>王巧丽，91年，2013年6月毕业于福建师范大学 信息技术学院 WEB应用开发专业<br>一个热爱前端开发并且一直在不断学习探索前端知识的前端开发妹子<br>联系方式：18695789610<br>邮箱：414217795@qq.com</p>
+<h2 id="掌握技能"><a href="#掌握技能" class="headerlink" title="掌握技能"></a>掌握技能</h2><p>1.熟练使用 <strong>HTML5、CSS3</strong> ，能准确还原设计稿<br>2.熟悉使用 <strong>JS/JQ DOM操作</strong> ，能够使用 <strong>JQ</strong> 开发自定义小插件<br>3.熟悉 <strong>前端优化</strong> 和 <strong>浏览器兼容</strong> ，重视用户体验<br>4.熟悉 <strong>MVVM</strong> 框架 <strong>Vue</strong><br>5.熟悉使用 <strong>Git</strong> 进行版本控制和代码托管，日常使用 <strong>WebStorm</strong> 、 <strong>sublime text</strong> 作为日常开发环境进行工作，能够使用 <strong>webpack</strong> 打包管理项目，了解项目开发流程及开发调试工具的使用</p>
+<h2 id="主要项目经验（列举少数）"><a href="#主要项目经验（列举少数）" class="headerlink" title="主要项目经验（列举少数）"></a>主要项目经验（列举少数）</h2><h3 id="腾云宝SAAS后台管理（2017）"><a href="#腾云宝SAAS后台管理（2017）" class="headerlink" title="腾云宝SAAS后台管理（2017）"></a>腾云宝SAAS后台管理（2017）</h3><p><strong> vue PC端elementUI后台管理系统 </strong><br>1.<strong>saas</strong> 后台管理系统前后端分离开发，使用 <strong>vue-cli + elementUI</strong> 构建的一个后台管理系统。<br>2.一般的增删改查功能，菜单权限功能，主要是用 <strong>axios</strong> 请求和发送数据，组件间通信来实现。<br>3.其他功能如：角色管理、角色职位状态修改和分配，主要通过双向绑定和操作数组来实现。<br>4.级联选择区域使用了 <strong>element-china-area-data</strong> 级联省市区插件数据。<br>5.用户权限，主要是在用户登录请求成功后将不重要的用户信息放在 <strong>sessionStorage</strong>，其他页面获取 <strong>sessionStorage</strong> 判断用户显示模块及前端路由拦截。<br>6.店铺管理用到获取经纬度，使用了 <strong>vue</strong> 高德地图插件 <strong>vue-amap</strong>.</p>
+<h3 id="招行员工注册模块（2017）"><a href="#招行员工注册模块（2017）" class="headerlink" title="招行员工注册模块（2017）"></a>招行员工注册模块（2017）</h3><p><strong> vue 移动端 mintUI </strong><br>1.招行员工注册模块，包过基本信息，收款信息，店铺信息，注册信息，照片信息几个步骤，填完信息点下一步进入下一个步骤。<br>2.使用<strong> vue-cli + minUI </strong>完成，使用 <strong>axios</strong> 请求服务端数据，没有使用路由，主要使用了组件间通信完成这几个组件的信息交互。使用了<strong>mintUI</strong> 的省市区联动<br>3.因为需要嵌入 <strong>app</strong> 中，所以需要和 <strong>app</strong> 建立通信，需从 <strong>app</strong> 端获取员工 <strong>ID</strong> 和辨识码，判断 <strong>android</strong> 和 <strong>ios</strong> ，分别调用 <strong>app</strong> 提供的方法，需要将方法挂载到 <strong>window</strong> 下才能与 <strong>app</strong> 通信。<br>5.上传图片， <strong>ios</strong> 下可以用 <strong>vue-core-image-upload</strong> 组件，<strong>android</strong> 下存在兼容问题，使用安卓原生展示，需把用户上传的图片 <strong>URL</strong> 传给安卓。</p>
+<h3 id="中秋博饼移动端H5小游戏（2016）"><a href="#中秋博饼移动端H5小游戏（2016）" class="headerlink" title="中秋博饼移动端H5小游戏（2016）"></a>中秋博饼移动端H5小游戏（2016）</h3><p><strong> 前端开发 </strong> 中秋营销活动，博饼游戏，使用 <strong>HTML/ CSS3</strong> 和 <strong>jQ</strong> 插件 <strong>rotate</strong> 展示骰子从半空掷入碗里不规则滚动后展示结果的效果及博饼骰子声音效果等，<strong>ajax</strong> 获取数组，分割数组，遍历点数，显示为骰子博饼结果。</p>
+<h3 id="腾云商城移动端页面（2016）"><a href="#腾云商城移动端页面（2016）" class="headerlink" title="腾云商城移动端页面（2016）"></a>腾云商城移动端页面（2016）</h3><p><strong> 前端开发 </strong> 该项目为移动端网页，根据设计稿完成，利用了 <strong>HTML5、CSS3、rem </strong>移动端自适应，使用 <strong>sublime text</strong> 插件自动转换 <strong>px</strong> 和 <strong>rem</strong> ，丰富展示前端界面。</p>
+<h3 id="页游暑期活动前端页面（2016）"><a href="#页游暑期活动前端页面（2016）" class="headerlink" title="页游暑期活动前端页面（2016）"></a>页游暑期活动前端页面（2016）</h3><p><strong> 前端开发 </strong><br>1.该项目为 <strong>PC</strong> 端暑期营销活动页面，根据设计稿完成前端页面，活动共有3关小游戏，闯关赢取积分，每日 <strong>15</strong> 点、<strong>20</strong> 点都有彩蛋从天而降，砸中彩蛋有对应礼物。<br>2.第一关脑洞风暴，点击已开启状态的，进入游戏界面，题目不间断的向左移动，要求 <strong>10</strong> 秒内答对 <strong>3</strong> 题成功闯关。<br>3.第二关飞奔夺标，与傀儡进行赛跑胜者获得对应奖品，奖品可免费刷新一次，刷到奖品为通关劵，并且跑赢傀儡即可通关。<br>4.第三关芝麻开门，点击五个山庄分别是：通过通道、眼镜蛇、蜘蛛精、恐龙、空空如也。每次开始山庄随机互换，点到通过通道就成功通关，点到空空如也则还有一次机会，点到其他山庄都通关失败。全部通关3关可以开启肾宝大门。<br>5.该项目使用了比较多的 <strong>CSS3</strong> 效果，用 <strong>JQ</strong> 封装了弹窗插件，图片预加载插件等，通过这个项目了解并使用了一些前端优化，比如 <strong>css、js</strong> 压缩，图片压缩，图片预加载。</p>
+<h3 id="游龙160手游移动端H5页面（2015）"><a href="#游龙160手游移动端H5页面（2015）" class="headerlink" title="游龙160手游移动端H5页面（2015）"></a>游龙160手游移动端H5页面（2015）</h3><p><strong> 前端开发 </strong> 该项目为移动端网页，根据设计稿完成，利用了 <strong>HTML5、CSS3、rem</strong> 移动端自适应，使用 <strong>sublime text</strong> 插件自动转换 <strong>px</strong> 和 <strong>rem</strong>，丰富展示前端界面。</p>
+<h3 id="海峡文艺网前端（2014）"><a href="#海峡文艺网前端（2014）" class="headerlink" title="海峡文艺网前端（2014）"></a>海峡文艺网前端（2014）</h3><p><strong> 前端开发 </strong>该项目为 <strong>PC</strong> 端页面，根据设计稿完成前端页面，要求移动端查看页面布局与 <strong>PC</strong> 端一致，利用了 <strong>HTML5、CSS3、JQ</strong> 等技术来丰富展示前端界面， 配合服务端使用 <strong>JSP</strong> 做为模板引擎进行数据逻辑处理，通过 <strong>Ajax</strong> 与后端进行数据交互。</p>
+<h2 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h2><h3 id="星网锐捷腾云宝平台研发部（2016-08-2017-12）"><a href="#星网锐捷腾云宝平台研发部（2016-08-2017-12）" class="headerlink" title="星网锐捷腾云宝平台研发部（2016-08 ~ 2017-12）"></a>星网锐捷腾云宝平台研发部（2016-08 ~ 2017-12）</h3><p> 1.移动端腾云商城前端页面（要求移动端兼容性，前端性能优化）<br> 2.移动端微信营销类”html5 + css3 + js”小游戏前端开发<br> 3.使用前后端分离开发框架”vue-cli + elementUI” 开发”saas后台管理系统”<br> 4.使用”vue-cli + mintUI” 开发”移动端 招行员工注册模块” 和app对接通信</p>
+<h3 id="游龙网络（2015-11-2016-08）"><a href="#游龙网络（2015-11-2016-08）" class="headerlink" title="游龙网络（2015-11 ~ 2016-08）"></a>游龙网络（2015-11 ~ 2016-08）</h3><p> 1.游戏类官网前端页面（熟练使用css3动画效果和html5新特性,前端性能优化）<br> 2.pc及移动端各类”html5 + css3 + js”小游戏前端开发<br> 3.前后端分离开发框架”react.js”学习</p>
+<h3 id="福建奇松信息技术（2013-10-2015-11）"><a href="#福建奇松信息技术（2013-10-2015-11）" class="headerlink" title="福建奇松信息技术（2013-10 ~ 2015-11）"></a>福建奇松信息技术（2013-10 ~ 2015-11）</h3><p> 1.公司官网前端页面，政府类官网如海峡文艺网、福建舞蹈网、福建文艺网（原有基础上维护）等（这类网站大多要求对浏览器兼容到ie6）<br> 2.各类活动专题前端页面<br> 3.cms建站<br> 4.boostrap移动端和pc通用模板前端页面</p>
+<h3 id="福建紫光信息技术（实习-2012-10-2013-10）"><a href="#福建紫光信息技术（实习-2012-10-2013-10）" class="headerlink" title="福建紫光信息技术（实习 2012-10 ~2013-10）"></a>福建紫光信息技术（实习 2012-10 ~2013-10）</h3><p> 1.公司官网前端页面，其他pc端网站前端<br> 2.各类营销专题前端页面<br> 3.cms建站<br> 4.php学习</p>
+
+    </article>
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:414217795@qq.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/ZOEWANGCHINA" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">Theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+        <span id="busuanzi_container_site_pv">VISITOR VOLUME: <span id="busuanzi_value_site_pv"></span>
+        </span>
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="back-top">&#xe639;</div>
+    <div class="sidebar">
+    <div class="sidebar-header sidebar-header-show-archive">
+        <div class="sidebar-category">
+            <span class="sidebar-archive-link"><span class="iconfont-archer">&#xe67d;</span>Archive</span>
+            <span class="sidebar-tags-link"><span class="iconfont-archer">&#xe610;</span>Tag</span>
+        </div>
+    </div>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-archive">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 2 </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/03</span><a class="archive-post-title" href= "/public/2018/05/03/change时获取非value值" >element-ui,InputNumber传值遇到的问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/09</span><a class="archive-post-title" href= "/public/2018/01/09/hello-world" >Hello World</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name"><a href= "#">element-ui</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">vue</a></span>
+    
+    </div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tag-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var jsInfo = {
+        root: '/'
+    }
+</script>
+    <!-- 不蒜子  -->
+    
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ统计  -->
+    
+    </div>
+    </body>
+</html>
+
+
